@@ -33,6 +33,12 @@ $title = "Smartlab"
     @yield('css')
     <link rel="icon" type="image/png" href="/images/icons/fav.png">
 
+    {{-- Snowstorm --}}
+
+    @if (date('m.d') >= 12 || date('m.d') >= 1 && date('m.d') <= 1.15)
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/Snowstorm/20131208/snowstorm-min.js" integrity="sha512-rMkLONrw50boYG/6Ku0E8VstfWMRn5D0dX3QZS26Mg0rspYq4EHxYOULuPbv9Be2HBbrrmN8dpPgYUeJ4bINCA==" crossorigin="anonymous"></script>
+    @endif
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114227726-1"></script>
     <script>
