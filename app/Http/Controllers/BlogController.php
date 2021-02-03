@@ -114,14 +114,17 @@ class BlogController extends Controller
                 //->where('blog_translations.language', $lang)
                 ->get();
         }
-
-
-        return view(
-            'pages.blog',
-            [
-                'blog' => $blog[0],
-                'blogs' => $blogs
-            ]
-        );
+        if (isset($blog[0])) {
+                return view(
+                'pages.blog',
+                [
+                    'blog' => $blog[0],
+                    'blogs' => $blogs
+                ]
+            );
+        }else {
+            abort(404);
+        }
+        
     }
 }
