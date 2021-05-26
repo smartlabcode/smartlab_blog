@@ -12,6 +12,8 @@ $title = "Smartlab"
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta property="og:description" content="@yield('description')" />
     <meta property="og:title" content="@yield('title')" />
+    <meta property="og:image" content="@yield('image')">
+    <meta itemprop="image" content="@yield('image')">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@smartlab" />
     <meta name="twitter:creator" content="@smartlab">
