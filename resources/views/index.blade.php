@@ -972,7 +972,7 @@
                                                                 echo "Moodle";
                                                                 break;
                                                             case "educational";
-                                                                echo "Video Animations";
+                                                                echo "Educational";
                                                                 break;
                                                         } ?></span>
                     <img src="images/<?php switch ($blog->tag) {
