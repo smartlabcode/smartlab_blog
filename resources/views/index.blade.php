@@ -986,7 +986,7 @@
                                                 echo "moodle-icon.svg";
                                                 break;
                                             case "educational";
-                                                echo "video-icon.svg";
+                                                echo "mortarboard.svg";
                                                 break;
                                         } ?>" alt="" class="" />
                 </div>
@@ -1042,7 +1042,7 @@
                                                 echo "moodle-icon.svg";
                                                 break;
                                             case "educational";
-                                                echo "video-icon.svg";
+                                                echo "mortarboard.svg";
                                                 break;
                                         } ?>" alt="" class="" />
                 </div>
@@ -1105,7 +1105,7 @@
                                             echo "moodle-icon.svg";
                                             break;
                                         case "educational";
-                                            echo "video-icon.svg";
+                                            echo "mortarboard.svg";
                                             break;
                                     } ?>" alt="" class="" />
             </div>
