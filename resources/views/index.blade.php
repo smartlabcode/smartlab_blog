@@ -174,6 +174,10 @@
         transform: translateX(10%);
     }
 
+    .educational{
+        background-color: var(--video-icon);
+    }
+
     .moodle-icon {
         background-color: var(--button-bg-color);
     }
@@ -958,7 +962,7 @@
                                                             echo "moodle-icon";
                                                             break;
                                                         case "educational";
-                                                            echo "video-icon";
+                                                            echo "educational";
                                                             break;
                                                     } ?>">
                     <span class="blog-icon-description"><?php switch ($blog->tag) {
@@ -1014,7 +1018,7 @@
                                                         echo "moodle-icon";
                                                         break;
                                                     case "educational";
-                                                        echo "video-icon";
+                                                        echo "educational";
                                                         break;
                                                 } ?>">
                     <span class="blog-icon-description"><?php switch ($blog->tag) {
@@ -1077,7 +1081,7 @@
                                                     break;
                                                 case "educational";
 
-                                                    echo "video-icon";
+                                                    echo "educational";
                                                     break;
                                             } ?>">
                 <span class="blog-icon-description"><?php switch ($blog->tag) {
