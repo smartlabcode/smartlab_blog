@@ -958,7 +958,7 @@
                                                             echo "moodle-icon";
                                                             break;
                                                         case "educational";
-                                                            echo "video-icon";
+                                                            echo "mortarboard";
                                                             break;
                                                     } ?>">
                     <span class="blog-icon-description"><?php switch ($blog->tag) {
@@ -1014,7 +1014,7 @@
                                                         echo "moodle-icon";
                                                         break;
                                                     case "educational";
-                                                        echo "video-icon";
+                                                        echo "mortarboard";
                                                         break;
                                                 } ?>">
                     <span class="blog-icon-description"><?php switch ($blog->tag) {
@@ -1077,7 +1077,7 @@
                                                     break;
                                                 case "educational";
 
-                                                    echo "video-icon";
+                                                    echo "mortarboard";
                                                     break;
                                             } ?>">
                 <span class="blog-icon-description"><?php switch ($blog->tag) {
