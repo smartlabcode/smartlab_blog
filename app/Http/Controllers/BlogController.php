@@ -15,7 +15,6 @@ class BlogController extends Controller
 
         session_start();
         session()->put('language', $lang);
-
         $blogs = DB::select(
             'SELECT 
                       bt.heading,
@@ -32,7 +31,7 @@ class BlogController extends Controller
                     LEFT JOIN users AS u ON b.users_id = u.id
                     LEFT JOIN blog_translations AS bt ON b.id = bt.blogs_id
                     LEFT JOIN blog_tags AS bta ON b.id = bta.blogs_id
-                    WHERE b.published = "true" AND b.deleted_at IS NULL
+                    WHERE b.published = "true" AND b.deleted_at IS NULL AND bt.language = "'.$lang.'"
                     GROUP BY b.id ORDER BY b.created_at DESC'
         );
         return view('layouts.app', [
@@ -72,7 +71,7 @@ class BlogController extends Controller
                     LEFT JOIN users AS u ON b.users_id = u.id
                     LEFT JOIN blog_translations AS bt ON b.id = bt.blogs_id
                     LEFT JOIN blog_tags AS bta ON b.id
-                    WHERE bt.language = "' . $lang . '" AND b.published = "true" AND b.deleted_at IS NULL
+                    WHERE bt.language = "'.$language.'" AND b.published = "true" AND b.deleted_at IS NULL
                     GROUP BY b.id ORDER BY b.created_at DESC'
         );
 
@@ -93,7 +92,7 @@ class BlogController extends Controller
                 ->leftJoin('blog_translations', 'blogs.id', '=', 'blog_translations.blogs_id')
                 ->where('blogs.id', $id)
                 ->where('blogs.published', 'true')
-                //->where('blog_translations.language', $lang)
+                ->where('blog_translations.language', $lang)
                 ->get();
         } else {
 

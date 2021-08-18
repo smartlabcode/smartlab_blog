@@ -515,9 +515,9 @@
                 @csrf
                 @method('PUT')
 
-                <input type="radio" name="language" id="en" value="en" onclick="changeSiteLanguage(this.value)" @if(App::getlocale()=='en' ) checked @endif><label for="en" @if(App::getlocale()=='en' ) class="language-selected" @endif>@lang('menu.english_language')</label>
-                <input type="radio" name="language" id="de" value="de" onclick="changeSiteLanguage(this.value)" @if(App::getlocale()=='de' ) checked @endif><label for="de" @if(App::getlocale()=='de' ) class="language-selected" @endif>@lang('menu.german_language')</label>
-                <input type="radio" name="language" id="bs" value="bs" onclick="changeSiteLanguage(this.value)" @if(App::getlocale()=='bs' ) checked @endif><label for="bs" @if(App::getlocale()=='bs' ) class="language-selected" @endif>@lang('menu.bosnian_language')</label>
+                <input type="radio" name="language" id="en" value="en" onclick="changeSiteLanguage(this.value)" @if(session('language')=='en' ) checked @endif><label for="en" @if(session('language')=='en' ) class="language-selected" @endif>@lang('menu.english_language')</label>
+                {{-- <input type="radio" name="language" id="de" value="de" onclick="changeSiteLanguage(this.value)" @if(session('language')=='de' ) checked @endif><label for="de" @if(session('language')=='de' ) class="language-selected" @endif>@lang('menu.german_language')</label> --}}
+                <input type="radio" name="language" id="bs" value="bs" onclick="changeSiteLanguage(this.value)" @if(session('language')=='bs' ) checked @endif><label for="bs" @if(session('language')=='bs' ) class="language-selected" @endif>@lang('menu.bosnian_language')</label>
 
             </form>
 
