@@ -128,7 +128,7 @@
         cursor: pointer;
         border: none;
         border-radius: 35px;
-        width: 200px;
+        width: 300px;
         height: 60px;
         font-size: 1.1em !important;
         padding: 10px 22px;
@@ -467,7 +467,7 @@
 
     @media screen and (max-width: 425px) {
         .nav-bot .filters {
-            width: 150px;
+            width: 175px;
             height: 50px;
         }
 
@@ -509,7 +509,7 @@
 
         <div class="nav-top" id="nav-top">
 
-            <p><span>Call: </span><a href="tel: +38733956222"><span>+387 33 956 222</span></a></p>
+            <p><span>@lang('menu.call'): </span><a href="tel: +38733956222"><span>+387 33 956 222</span></a></p>
             <form id="languageForm" action="/language" method="POST">
                 <!-- Form for sending new language after user clicks on one of the select options - page is refreshed with new language translations -->
                 @csrf
@@ -528,7 +528,7 @@
                     <span>BLOG</span>
                     <a href="{{env("BLOG_DOMAIN")}}"><img class="nav-logo" src="{{ asset('images/smartlab-logo.svg') }}" alt="smartlab logo"></a>
                 </div>
-                <a href="{{env("APP_URL")}}"><button class="filters --blue-background home-button"><span class="home-text">Home</span></button></a>
+                <a href="{{env("APP_URL")}}"><button class="filters --blue-background home-button"><span class="home-text">@lang('index.homeButton')</span></button></a>
             </div>
 
             <div class="nav-bot-right">

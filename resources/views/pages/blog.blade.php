@@ -757,7 +757,7 @@
 
     <form class="blog-subscribe-form">
         <div class="blog-subscribe-form-left">
-            <h3 class="h1-font">Subscribe to Our Blog</h3>
+            <h3 class="h1-font">@lang('index.subscribeBlog')</h3>
             <p class="p-font">Subscribe via e-mail</p>
             <label><input type="checkbox" name="categories" value="design" />
                 Design</label>

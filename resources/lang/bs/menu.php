@@ -11,5 +11,6 @@ return [
     'eight_item' => 'Izloguj se',
     'english_language' => 'En',
     'german_language' => 'De',
-    'bosnian_language' => 'Ba'
+    'bosnian_language' => 'Ba',
+    'call' => 'Pozovi'
 ];
