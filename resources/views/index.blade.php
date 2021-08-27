@@ -1083,7 +1083,7 @@ footer img {
 	.contain {
 		width: 95%;
 		margin: 0 auto;
-		margin-bottom: 100px;
+		/* margin-bottom: 100px; */
 	}
 }
 

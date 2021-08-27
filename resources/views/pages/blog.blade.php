@@ -221,7 +221,7 @@
     }
 
     .blog-content {
-        margin-bottom: 100px;
+        /* margin-bottom: 100px; */
     }
 
     .blog-content .p-font {
