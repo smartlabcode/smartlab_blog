@@ -76,16 +76,17 @@ $title = "Smartlab"
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
 
     @include('layouts.menu')
+    @include('layouts.footer')
     @include('index')
 
     <div id="app">
 
         @yield('menu')
 
-
         <main>
             @yield('content')
         </main>
+        @yield('footer')
     </div>
     @yield('js')
     @yield('js2')

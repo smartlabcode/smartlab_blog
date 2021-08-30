@@ -1131,7 +1131,7 @@ footer img {
 		padding-top: 300px;
 	}
 
-	footer nav {
+	.footer-nav {
 		display: none !important;
 	}
 

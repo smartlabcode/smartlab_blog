@@ -3,7 +3,7 @@
     <!--<img class="footer-background" src="images/footer-dark.svg" />-->
     <div class="contain">
         <div class="footer-top-row">
-            <nav class="footer-top-column --left">
+            <div class="footer-top-column --left footer-nav">
                 <ul>
                     <li><a href="/#anchor">@lang('menu.first_item')</a></li>
                     <li><a href="/#about">@lang('menu.second_item')</a></li>
@@ -11,7 +11,7 @@
                     <li><a href="{{env('BLOG_DOMAIN')}}/{{App::getlocale()}}" target="_blank" rel="noopener">@lang('menu.fourth_item')</a></li>
                     <li><a href="/#contact">@lang('menu.fifth_item')</a></li>
                 </ul>
-            </nav>
+            </div>
             <div class="footer-top-column phone --center">
                 <div>
                     <img src="{{asset('/images/footer/social-icons/phone-receiver.svg')}}" alt="phone" />
