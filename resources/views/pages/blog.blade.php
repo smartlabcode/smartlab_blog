@@ -669,26 +669,39 @@
 <div class="contain">
     <div class="blog-image-container">
         <img class="blog-image" src="https://smartlab.ba/{{$blog->image_path}}" />
-        <a href="{{ env("BLOG_DOMAIN")  }}/@if(App::getlocale()){{App::getlocale()}}@else en @endif"><button class="blog-back">
+        <a href="{{ env("BLOG_DOMAIN")  }}/@if(session('language')){{session('language')}}@else en @endif"><button class="blog-back">
                 <span>Back to blog</span>
                 <img src={{"/images/back-to-home.svg"}} />
             </button></a>
 
         <div class="blog-social">
-            <div>
-                <a id="share-btn"><img src={{"/images/fb-blog-share.svg"}} /></a>
-            </div>
-            <div style="position: relative;">
+            {{-- Facebook share --}}
 
-                <a href="#" class="twitter-share"><img src={{"/images/twitter-share.svg"}} /></a>
-            </div>
-            <div style="position: relative;">
-                <img src={{"/images/linkedin-share.svg"}} />
-                <script type="IN/Share" data-url="<?php
-                                                    echo ("https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] .'/'. session('language')}}" 
+            target="popup" 
+            onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] .'/'. session('language')}}','popup','width=600,height=600'); return false;">
+                <div style="position: relative;">
+                    <img src={{"/images/fb-blog-share.svg"}} />
+                </div>
+            </a>
+            {{-- Twitter share --}}
 
-                                                    ?>"></script>
-            </div>
+            <a href="https://twitter.com/intent/tweet?url={{$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] .'/'. session('language')}}" 
+            target="popup" 
+            onclick="window.open('https://twitter.com/intent/tweet?url={{$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] .'/'. session('language')}}','popup','width=600,height=600'); return false;">
+                <div style="position: relative;">
+                    <img src={{"/images/twitter-share.svg"}} />
+                </div>
+            </a>
+
+            {{-- Linkedin share --}}
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] .'/'. session('language')}}" 
+            target="popup" 
+            onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url={{$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] .'/'. session('language')}}','popup','width=600,height=600'); return false;">
+                <div style="position: relative;">
+                    <img src={{"/images/linkedin-share.svg"}} />
+                </div>
+            </a>
         </div>
     </div>
     <div class="blog-content">
@@ -714,7 +727,7 @@
     </div>
 </div>
 <div id="form-container" class="contain" style="display: none;">
-    <form class="contact-form" action="/contact" method="POST">
+    <form class="contact-form" action="/subscribe" method="POST">
         <!-- Include token -->
         @csrf
         <div class="contact-form-group">
@@ -755,7 +768,9 @@
         </p>
     </div>
 
-    <form class="blog-subscribe-form">
+    <form class="blog-subscribe-form" action="/subscribe" method="POST">
+        <!-- Include token -->
+        @csrf
         <div class="blog-subscribe-form-left">
             <h3 class="h1-font">@lang('index.subscribeBlog')</h3>
             <p class="p-font">Subscribe via e-mail</p>
@@ -778,7 +793,7 @@
             </p>
             <div>
                 <input type="email" name="email" placeholder="e-mail address" />
-                <button class="button">Subscribe</button>
+                <button type="submit" class="button">Subscribe</button>
             </div>
         </div>
     </form>
