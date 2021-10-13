@@ -21,11 +21,3 @@ Route::get('schedule', function () {
 
     return "ok";
 });
-
-Route::post('/subscribe', function(){
-    $email = request('email');
-
-    Newsletter::subscribe($email);
-
-    return redirect()->back();
-});
