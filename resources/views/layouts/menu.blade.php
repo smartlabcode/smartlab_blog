@@ -528,7 +528,7 @@
                     <span>BLOG</span>
                     <a href="{{env("BLOG_DOMAIN")}}"><img class="nav-logo" src="{{ asset('images/smartlab-logo.svg') }}" alt="smartlab logo"></a>
                 </div>
-                <a href="{{env("APP_URL")}}"><button class="filters --blue-background home-button"><span class="home-text">@lang('index.homeButton')</span></button></a>
+                <a href="{{env("APP_URL")}}/{{App::getlocale()}}"><button class="filters --blue-background home-button"><span class="home-text">@lang('index.homeButton')</span></button></a>
             </div>
 
             <div class="nav-bot-right">
