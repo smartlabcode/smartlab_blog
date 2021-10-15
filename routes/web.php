@@ -27,5 +27,5 @@ Route::post('/subscribe', function(){
 
     Newsletter::subscribe($email);
 
-    return redirect()->back();
+    return redirect()->back()->with('success', 'Thank you for subscribing to our newsletter!');
 });

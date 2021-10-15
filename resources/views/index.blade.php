@@ -1380,10 +1380,18 @@ footer img {
                 <div>
                     <input type="email" name="email" placeholder="@lang('index.email')" />
                     <button type="submit" class="button">@lang('index.subscribe')</button>
+                       
+                </div>
+                @if (\Session::has('success'))
+                    <div class="alert alert-success" style="margin-top: 38px; margin-bottom:0; font-size: large;">
+                        <ul style="list-style: none;">
+                            <li>{!! \Session::get('success') !!}</li>
+                        </ul>
+                    </div>
+                    @endif
                 </div>
             </div>
         </form>
-    </div>
 </section>
 <section class="blog-section contain">
     <img class="blog-section-bg" src="images/blue-orange-bg.svg" />
