@@ -1338,7 +1338,7 @@ footer img {
     </div>
     <p>Coming soon!</p>
 </div>-->
-<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/578bfc6f4b341b53cc262f055/fb2f34aa58150f7cea4b93ae9.js");</script>
+{{-- <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/578bfc6f4b341b53cc262f055/fb2f34aa58150f7cea4b93ae9.js");</script> --}}
 <div class="loader-container">
     <div class="css-animation-container">
         <div class="css-animation"></div>
@@ -1614,5 +1614,5 @@ footer img {
         }, 1000)
     });
 </script>
-<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/1bee96781fc9e12f2ae992233/f4981923483c1b8d6549e66fa.js");</script>
+{{-- <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/1bee96781fc9e12f2ae992233/f4981923483c1b8d6549e66fa.js");</script> --}}
 @endsection
