@@ -1327,6 +1327,34 @@ footer img {
 	}
 }
 
+
+
+.center {
+  text-align: center;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination a.active {
+  background-color: #4885fa;
+  color: white;
+  border: 1px solid #4885fa;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
 </style>
 @section('content')
 <!--<div class="coming-soon-container">
@@ -1394,6 +1422,15 @@ footer img {
         </form>
 </section>
 <section class="blog-section contain">
+    @isset($page)
+    <div class="center" style="margin-top: 50px">
+            <div class="pagination">
+            @for ($i = 1; $i < $pages+1; $i++) 
+                <a href="?page={{$i}}" @if ($i == $page) class="active" @endif>{{$i}}</a>
+            @endfor
+            </div>
+    </div>
+    @endisset
     <img class="blog-section-bg" src="images/blue-orange-bg.svg" />
     <img class="blog-section-orange-circle" src="images/orange-circle.svg" />
     <div class="blog-container">
@@ -1585,16 +1622,24 @@ footer img {
         </a>
         
         @endif
-
+        
         @endforeach
-
-
 
         <!--<div class="divider-container">
             <div class="divider"></div>
             <button class="button button-orange">Load More</button>
         </div>-->
     </div>
+    {{-- Pagination --}}
+        @isset($page)
+    <div class="center" style="margin-top: 50px">
+            <div class="pagination">
+            @for ($i = 1; $i < $pages+1; $i++) 
+                <a href="?page={{$i}}" @if ($i == $page) class="active" @endif>{{$i}}</a>
+            @endfor
+            </div>
+    </div>
+    @endisset
 </section>
     {{--  --}}
 @endsection

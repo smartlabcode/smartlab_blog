@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
+
 
 class BlogController extends Controller
 {
@@ -34,8 +36,26 @@ class BlogController extends Controller
                     WHERE b.published = "true" AND b.deleted_at IS NULL AND bt.language = "'.$lang.'"
                     GROUP BY b.id ORDER BY b.created_at DESC'
         );
+        $perPage = 8;
+        $page = 1;
+        if (isset($_GET['page'])) {
+            $page = $_GET['page'];
+        }
+        $total = count($blogs);
+        $currentpage = $page;
+        $offset = ($currentpage * $perPage) - $perPage ;
+        $blogs = array_slice($blogs , $offset , $perPage);
+
+        $pages = $total / $perPage;
+        $pages = $pages + 0.5;
+        $pages = intval(round($pages));
+
+        // $blogs = $blogs->paginate(5);
+        // $blogs = new Paginator($blogs, 5, $_GET['page']);
         return view('layouts.app', [
-            'blogs' => $blogs
+            'blogs' => $blogs,
+            'pages' => $pages,
+            'page' => $page
 
         ]);
     }
